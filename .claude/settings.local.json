@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__5dfc17f1-791d-48cf-b64a-dc144deb0735__get_metadata",
+      "mcp__5dfc17f1-791d-48cf-b64a-dc144deb0735__get_screenshot",
+      "Bash(curl -sL -o \"/private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/screenshot_full.png\" \"https://www.figma.com/api/mcp/asset/944ee22f-fee9-44d0-8cf8-51f85a17e0a6.png\")",
+      "mcp__5dfc17f1-791d-48cf-b64a-dc144deb0735__get_design_context",
+      "Bash(curl -sL -o \"/private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/screenshot_hd.png\" \"https://www.figma.com/api/mcp/asset/c028ed1c-e01f-4641-8711-cfdce02de77e.png\")",
+      "Bash(sips -c 200 704 -o bottom_crop.png screenshot_hd.png --cropOffset 0 2800)",
+      "Bash(sips -g pixelHeight -g pixelWidth screenshot_hd.png)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -sL -o /private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/stat_photo.png https://www.figma.com/api/mcp/asset/872d6034-bd00-491b-89a9-1b6618fef88a.png)",
+      "Bash(curl -sL -o /private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/findfit_photo.png https://www.figma.com/api/mcp/asset/8f02a70d-7f61-4232-a499-9a00e2c6abd3.png)",
+      "Bash(curl -sL -o /private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/talktoperson_photo.png https://www.figma.com/api/mcp/asset/7ea06b46-7878-4c2f-8fb5-89c4b36177ad.png)",
+      "Bash(curl -sL -o /private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/dcu_photo.png https://www.figma.com/api/mcp/asset/e8b4eb55-6409-4aaa-b80f-8b7fd9523f5e.png)",
+      "Bash(curl -sL -o /private/tmp/claude-503/-Users-Jill-delaFuente-Library-CloudStorage-OneDrive-Bounteous-Desktop-first-tech/1a2117d6-4a68-41ff-8b7c-9d2423847dab/scratchpad/hero_photo.png https://www.figma.com/api/mcp/asset/9ac3c136-3d57-4f86-b94c-3db2e1baa66e.png)",
+      "Bash(curl -sL -o '/Users/Jill.delaFuente/Library/CloudStorage/OneDrive-Bounteous/Desktop/first tech/_images/figma-export/member-portrait.png' https://www.figma.com/api/mcp/asset/57d0ce1c-fed1-4115-801f-2a92e1e1fb59.png)",
+      "Bash(curl -sL -o '/Users/Jill.delaFuente/Library/CloudStorage/OneDrive-Bounteous/Desktop/first tech/_images/figma-export/find-your-fit.jpg' https://www.figma.com/api/mcp/asset/ed6d65f1-8f08-4a0e-8e12-74da7f8cc56c.png)",
+      "Bash(curl -sL -o '/Users/Jill.delaFuente/Library/CloudStorage/OneDrive-Bounteous/Desktop/first tech/_images/figma-export/dcu-portrait.png' https://www.figma.com/api/mcp/asset/fd6afe1f-34c1-4a36-a404-2cce2528eeb1.png)",
+      "Bash(python3 -c \"import os; print\\(os.getcwd\\(\\)\\)\")",
+      "Bash(nohup python3 -m http.server 4173)",
+      "Bash(disown)",
+      "Read(//tmp/**)",
+      "Bash(curl -sI http://localhost:4173/index.html)",
+      "Bash(lsof -ti:4173)",
+      "Bash(xargs kill)",
+      "Bash(node --check \"/Users/Jill.delaFuente/Library/CloudStorage/OneDrive-Bounteous/Desktop/first tech/js/script.js\")",
+      "Bash(curl -s http://localhost:4173/js/script.js)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
