@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>AI Banking — First Tech</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <div class="app-gradient">
+
+    <!-- ============ SECTION: HOME ============ -->
+    <section class="app-section app-section--home is-active" data-section="home">
+      <div class="app-topbar">
+        <img src="assets/logo-mark.svg" alt="First Tech" class="app-topbar__logo" />
+        <div class="app-topbar__island" aria-hidden="true"></div>
+        <div class="app-topbar__actions">
+          <button type="button" class="app-topbar__notif" aria-label="Notifications">
+            <img src="assets/icon-notification.svg" alt="" />
+          </button>
+        </div>
+      </div>
+
+      <h1 class="app-greeting"><strong>Good morning,</strong><br />Morgan</h1>
+
+      <div class="pill-nav" id="pillNav" role="tablist" aria-label="Account views">
+        <button type="button" class="pill-nav__btn is-active" data-panel="accounts" role="tab" aria-selected="true">My accounts</button>
+        <button type="button" class="pill-nav__btn" data-panel="insights" role="tab" aria-selected="false">My insights</button>
+        <button type="button" class="pill-nav__btn" data-panel="moves" role="tab" aria-selected="false">Money moves</button>
+        <button type="button" class="pill-nav__btn" data-panel="activity" role="tab" aria-selected="false">Recent activity</button>
+      </div>
+
+      <div class="panels-viewport">
+        <div class="panels-track" id="panelsTrack">
+
+          <!-- ============ PANEL: MY ACCOUNTS ============ -->
+          <section class="panel" data-panel="accounts">
+            <div class="card card--spending">
+              <div class="spending__left">
+                <div class="spending__title">
+                  <p class="spending__heading">Monthly Spending</p>
+                  <p class="spending__subtext">as of 8/31/2026</p>
+                </div>
+                <ul class="spending__legend">
+                  <li><img src="assets/dot-dining.svg" alt="" /><span>Dining <strong>25%</strong></span></li>
+                  <li><img src="assets/dot-groceries.svg" alt="" /><span>Groceries <strong>25%</strong></span></li>
+                  <li><img src="assets/dot-auto.svg" alt="" /><span>Auto &amp; Transport <strong>12%</strong></span></li>
+                  <li><img src="assets/dot-subscriptions.svg" alt="" /><span>Subscriptions <strong>12%</strong></span></li>
+                  <li><img src="assets/dot-shopping.svg" alt="" /><span>Shopping <strong>10%</strong></span></li>
+                  <li><img src="assets/dot-other.svg" alt="" /><span>Other <strong>16%</strong></span></li>
+                </ul>
+              </div>
+              <div class="spending__chart">
+                <img src="assets/chart-donut.svg" alt="Monthly spending breakdown chart" />
+                <div class="spending__chart-info">
+                  <p class="spending__chart-label">Total</p>
+                  <p class="spending__chart-value">$5,450.00</p>
+                  <div class="spending__chart-trend">
+                    <img src="assets/icon-trend-up.svg" alt="" />
+                    <span>+4.8%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card--accounts">
+              <div class="accounts__header">
+                <div>
+                  <p class="accounts__heading">My accounts</p>
+                  <p class="accounts__subtext">4 accounts</p>
+                </div>
+                <p class="accounts__total">$47,293.07</p>
+                <button type="button" class="accounts__expand" aria-label="Expand accounts">
+                  <img src="assets/chevron-down-circle.svg" alt="" />
+                </button>
+              </div>
+              <ul class="accounts__list">
+                <li class="account-row">
+                  <div class="account-row__info">
+                    <p class="account-row__name">Rewards Checking</p>
+                    <p class="account-row__meta">x4821</p>
+                  </div>
+                  <p class="account-row__amount">$4,182.55</p>
+                  <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+                </li>
+                <li class="account-row">
+                  <div class="account-row__info">
+                    <p class="account-row__name">Rewards Savings</p>
+                    <p class="account-row__meta">x2290</p>
+                  </div>
+                  <p class="account-row__amount">$27,350.12</p>
+                  <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+                </li>
+                <li class="account-row">
+                  <div class="account-row__info">
+                    <p class="account-row__name">Odyssey Rewards World Elite Mastercard</p>
+                    <p class="account-row__meta">x4200</p>
+                  </div>
+                  <div class="account-row__amount-block">
+                    <p class="account-row__amount">$2,140.00</p>
+                    <p class="account-row__amount-label">Balance</p>
+                  </div>
+                  <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+                </li>
+                <li class="account-row account-row--last">
+                  <div class="account-row__info">
+                    <p class="account-row__name">EasyVest Growth Portfolio</p>
+                    <p class="account-row__meta">x5510</p>
+                  </div>
+                  <p class="account-row__amount">$15,760.40</p>
+                  <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ============ PANEL: MY INSIGHTS ============ -->
+          <section class="panel" data-panel="insights">
+            <div class="card card--feed">
+              <div class="feed__header">
+                <div>
+                  <p class="feed__heading">My insights</p>
+                  <p class="feed__subtext">4 Alerts</p>
+                </div>
+                <span class="ai-badge"><img src="assets/icon-chat-sparkle.svg" alt="" />AI-Powered</span>
+              </div>
+
+              <div class="insight-item">
+                <div class="insight-item__top">
+                  <div class="insight-item__icon"><img src="assets/icon-insight-dining.svg" alt="" /></div>
+                  <span class="tag tag--neutral">Trending</span>
+                </div>
+                <p class="insight-item__title">Dining spend up 15% this month</p>
+                <p class="insight-item__body">You've spent $342 on dining — about $45 above your usual pace. A couple fewer takeout orders would put you back on track.</p>
+                <p class="insight-item__footnote">Based on your last 6 months of dining transactions</p>
+              </div>
+
+              <div class="insight-item">
+                <div class="insight-item__icon insight-item__icon--ring"><img src="assets/icon-progress-ring.svg" alt="" /></div>
+                <p class="insight-item__title">68% to your Home Down Payment goal</p>
+                <p class="insight-item__body">At your current pace you'll reach $40,000 by next spring. Adding $150/mo would get you there about 3 months sooner.</p>
+                <p class="insight-item__footnote">Projected from your current savings trajectory</p>
+              </div>
+
+              <div class="insight-item">
+                <div class="insight-item__media"><img src="assets/card-mastercard.png" alt="Odyssey Rewards card" /></div>
+                <p class="insight-item__title">Odyssey Rewards payment due Sep 18</p>
+                <p class="insight-item__body">Minimum payment of $65 is due in a few weeks. Paying the full $2,140 avoids interest charges this cycle.</p>
+                <p class="insight-item__footnote">Calculated from your current APR and statement balance</p>
+                <button type="button" class="btn-outline">Schedule a payment</button>
+              </div>
+
+              <div class="insight-item">
+                <div class="insight-item__top">
+                  <div class="insight-item__icon insight-item__icon--tint"><img src="assets/logo-classpass.png" alt="ClassPass" /></div>
+                  <span class="tag tag--green">Savings</span>
+                </div>
+                <p class="insight-item__title">ClassPass unused for 60+ days</p>
+                <p class="insight-item__body">No check-ins detected on this subscription recently — canceling would free up $29/month.</p>
+                <p class="insight-item__footnote">No matching activity found in recent transactions</p>
+                <button type="button" class="btn-outline">Cancel ClassPass</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ PANEL: MONEY MOVES ============ -->
+          <section class="panel" data-panel="moves">
+            <div class="card card--feed">
+              <div class="feed__header">
+                <div>
+                  <p class="feed__heading">Money moves</p>
+                  <p class="feed__subtext">4 Moves</p>
+                </div>
+                <span class="ai-badge"><img src="assets/icon-chat-sparkle.svg" alt="" />Next Best</span>
+              </div>
+
+              <div class="move-item">
+                <span class="tag tag--blue">Pre-qualify</span>
+                <div class="move-item__row">
+                  <p class="move-item__title">You may pre-qualify for an auto loan</p>
+                  <img src="assets/chevron-right.svg" alt="" class="move-item__chevron" />
+                </div>
+                <p class="move-item__body">Based on your account history, a First Tech auto loan could offer a lower rate than your current Toyota Financial payment.</p>
+                <p class="move-item__cta">Check your rate — no credit impact</p>
+              </div>
+
+              <div class="move-item">
+                <span class="tag tag--green">On track</span>
+                <div class="move-item__row">
+                  <p class="move-item__title">Boost your Home Down Payment fund</p>
+                  <img src="assets/chevron-right.svg" alt="" class="move-item__chevron" />
+                </div>
+                <p class="move-item__body">You're 68% of the way to $40,000.</p>
+                <p class="move-item__cta">Reach your goal ~3 months sooner</p>
+              </div>
+
+              <div class="move-item">
+                <div class="move-item__row">
+                  <p class="move-item__title">Maximize card rewards</p>
+                  <img src="assets/chevron-right.svg" alt="" class="move-item__chevron" />
+                </div>
+                <p class="move-item__body">Your dining spend this month could earn 2X points on the Odyssey Rewards card instead of your debit card.</p>
+                <div class="move-item__media">
+                  <img src="assets/card-mastercard.png" alt="Odyssey Rewards card" />
+                  <span class="move-item__media-badge">~340 bonus points/mo</span>
+                </div>
+              </div>
+
+              <div class="move-item">
+                <span class="tag tag--green">On track</span>
+                <div class="move-item__row">
+                  <p class="move-item__title">August budget check-in</p>
+                  <img src="assets/chevron-right.svg" alt="" class="move-item__chevron" />
+                </div>
+                <p class="move-item__body">You've used 68% of your typical monthly budget with about a third of the month left.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ PANEL: RECENT ACTIVITY ============ -->
+          <section class="panel" data-panel="activity">
+            <div class="card card--feed">
+              <div class="activity__header">
+                <p class="feed__heading">Recent activity</p>
+                <a href="#" class="activity__see-all">See all</a>
+              </div>
+
+              <div class="activity__group">
+                <p class="activity__group-label">Pending <span class="activity__count">2</span></p>
+                <ul class="activity__list">
+                  <li class="transaction transaction--bordered">
+                    <div class="transaction__icon transaction__icon--tint"><img src="assets/logo-toyota.svg" alt="" /></div>
+                    <div class="transaction__info">
+                      <p class="transaction__name">Toyota Financial Services</p>
+                      <p class="transaction__meta">Aug 27 &nbsp; Auto Loan</p>
+                    </div>
+                    <p class="transaction__amount">-$412.18</p>
+                  </li>
+                  <li class="transaction">
+                    <div class="transaction__icon"><img src="assets/icon-cart.svg" alt="" /></div>
+                    <div class="transaction__info">
+                      <p class="transaction__name">Marlborough Farmers Market</p>
+                      <p class="transaction__meta">Aug 27 &nbsp; Groceries</p>
+                    </div>
+                    <p class="transaction__amount">-$64.30</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="activity__group">
+                <p class="activity__group-label">Posted</p>
+                <ul class="activity__list">
+                  <li class="transaction transaction--bordered">
+                    <div class="transaction__icon"><img src="assets/icon-home-outline.svg" alt="" /></div>
+                    <div class="transaction__info">
+                      <p class="transaction__name">Cedar Ridge Apartments</p>
+                      <p class="transaction__meta">Aug 25 &nbsp; Rent</p>
+                    </div>
+                    <p class="transaction__amount">-$1,850.00</p>
+                  </li>
+                  <li class="transaction transaction--bordered">
+                    <div class="transaction__icon transaction__icon--tint transaction__icon--crop-left"><img src="assets/logo-microsoft.png" alt="" /></div>
+                    <div class="transaction__info">
+                      <p class="transaction__name">Payroll Deposit — Microsoft</p>
+                      <p class="transaction__meta">Aug 24 &nbsp; Income</p>
+                    </div>
+                    <p class="transaction__amount transaction__amount--positive">+$4,250.00</p>
+                  </li>
+                  <li class="transaction">
+                    <div class="transaction__icon"><img src="assets/icon-dining-outline.svg" alt="" /></div>
+                    <div class="transaction__info">
+                      <p class="transaction__name">Ember &amp; Oak Bistro</p>
+                      <p class="transaction__meta">Aug 23 &nbsp; Dining</p>
+                    </div>
+                    <p class="transaction__amount">-$78.40</p>
+                  </li>
+                </ul>
+              </div>
+
+              <button type="button" class="btn-outline">See all transactions</button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: ACCOUNTS ============ -->
+    <section class="app-section app-section--subpage" data-section="accounts">
+      <div class="subpage-header">
+        <div class="subpage-header__island" aria-hidden="true"></div>
+        <div class="subpage-header__row">
+          <button type="button" class="subpage-header__back" data-section="home" aria-label="Back to home">
+            <img src="assets/chevron-left.svg" alt="" />
+          </button>
+          <p class="subpage-header__title">Accounts</p>
+          <button type="button" class="subpage-header__settings" aria-label="Settings">
+            <img src="assets/icon-settings.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="section-scroll">
+        <div class="card account-panel">
+          <div class="account-panel__icon"><img src="assets/icon-account-balance.svg" alt="" /></div>
+          <div class="account-panel__info">
+            <p class="account-row__name">Rewards Checking</p>
+            <p class="account-row__meta">x4821</p>
+          </div>
+          <p class="account-row__amount">$4,182.55</p>
+        </div>
+
+        <div class="card account-panel account-panel--stacked">
+          <div class="account-panel__row">
+            <div class="account-panel__icon"><img src="assets/icon-savings.svg" alt="" /></div>
+            <div class="account-panel__info">
+              <p class="account-row__name">Rewards Savings</p>
+              <p class="account-row__meta">x2290</p>
+            </div>
+            <div class="account-row__amount-block">
+              <p class="account-row__amount">$27,350.12</p>
+              <p class="account-row__note--positive">3.00% APY</p>
+            </div>
+          </div>
+          <p class="account-panel__note">Top 3.00% APY tier active — linked Rewards Checking met this month's $1,000 qualifying-spend requirement.</p>
+        </div>
+
+        <div class="card account-panel account-panel--stacked">
+          <div class="account-panel__row">
+            <div class="account-panel__icon"><img src="assets/nav-cards.svg" alt="" class="account-panel__icon-img--invert" /></div>
+            <div class="account-panel__info">
+              <p class="account-row__name">Odyssey Rewards World Elite Mastercard</p>
+              <p class="account-row__meta">x7734</p>
+            </div>
+            <p class="account-row__amount">-$2,140.00</p>
+          </div>
+          <div class="account-panel__credit">
+            <div class="account-panel__credit-row"><span>Credit Used</span><span>$2,140 / $8,000</span></div>
+            <div class="account-row__progress"><div class="account-row__progress-fill" style="width: 26.75%"></div></div>
+            <div class="account-panel__credit-row"><span>Min payment: $65</span><span>Due Sep 18</span></div>
+          </div>
+        </div>
+
+        <div class="card account-panel">
+          <div class="account-panel__icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="1" y="10" width="3" height="7" rx="1" fill="white" />
+              <rect x="7.5" y="5" width="3" height="12" rx="1" fill="white" />
+              <rect x="14" y="1" width="3" height="16" rx="1" fill="white" />
+            </svg>
+          </div>
+          <div class="account-panel__info">
+            <p class="account-row__name">EasyVest Growth Portfolio</p>
+            <p class="account-row__meta">x5510</p>
+          </div>
+          <p class="account-row__amount">$15,760.40</p>
+        </div>
+
+        <div class="card card--feed">
+          <div class="activity__header">
+            <p class="feed__heading">Recent transactions</p>
+            <a href="#" class="activity__see-all">See all</a>
+          </div>
+          <ul class="activity__list">
+            <li class="transaction transaction--bordered">
+              <div class="transaction__icon transaction__icon--tint"><img src="assets/logo-toyota.svg" alt="" /></div>
+              <div class="transaction__info">
+                <p class="transaction__name">Toyota Financial Services</p>
+                <p class="transaction__meta">Aug 27 &nbsp; Auto Loan</p>
+              </div>
+              <p class="transaction__amount">-$412.18</p>
+            </li>
+            <li class="transaction transaction--bordered">
+              <div class="transaction__icon"><img src="assets/icon-cart.svg" alt="" /></div>
+              <div class="transaction__info">
+                <p class="transaction__name">Marlborough Farmers Market</p>
+                <p class="transaction__meta">Aug 27 &nbsp; Groceries</p>
+              </div>
+              <p class="transaction__amount">-$64.30</p>
+            </li>
+            <li class="transaction transaction--bordered">
+              <div class="transaction__icon"><img src="assets/icon-home-outline.svg" alt="" /></div>
+              <div class="transaction__info">
+                <p class="transaction__name">Cedar Ridge Apartments</p>
+                <p class="transaction__meta">Aug 25 &nbsp; Rent</p>
+              </div>
+              <p class="transaction__amount">-$1,850.00</p>
+            </li>
+            <li class="transaction transaction--bordered">
+              <div class="transaction__icon transaction__icon--tint transaction__icon--crop-left"><img src="assets/logo-microsoft.png" alt="" /></div>
+              <div class="transaction__info">
+                <p class="transaction__name">Payroll Deposit — Microsoft</p>
+                <p class="transaction__meta">Aug 24 &nbsp; Income</p>
+              </div>
+              <p class="transaction__amount transaction__amount--positive">+$4,250.00</p>
+            </li>
+            <li class="transaction">
+              <div class="transaction__icon"><img src="assets/icon-dining-outline.svg" alt="" /></div>
+              <div class="transaction__info">
+                <p class="transaction__name">Ember &amp; Oak Bistro</p>
+                <p class="transaction__meta">Aug 23 &nbsp; Dining</p>
+              </div>
+              <p class="transaction__amount">-$78.40</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: CARDS ============ -->
+    <section class="app-section app-section--subpage" data-section="cards">
+      <div class="subpage-header">
+        <div class="subpage-header__island" aria-hidden="true"></div>
+        <div class="subpage-header__row">
+          <button type="button" class="subpage-header__back" data-section="home" aria-label="Back to home">
+            <img src="assets/chevron-left.svg" alt="" />
+          </button>
+          <p class="subpage-header__title">Cards</p>
+          <button type="button" class="subpage-header__settings" aria-label="Settings">
+            <img src="assets/icon-settings.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="section-scroll">
+        <div class="card card--wallet">
+          <img src="assets/card-mastercard.png" alt="Odyssey Rewards World Elite Mastercard" class="card--wallet__art" />
+          <div>
+            <p class="card--wallet__name">Odyssey Rewards World Elite Mastercard</p>
+            <p class="card--wallet__meta">x7734 &nbsp;&middot;&nbsp; Expires 11/29</p>
+          </div>
+          <div class="card--wallet__balance-row">
+            <div>
+              <p class="card--wallet__amount">$2,140.00</p>
+              <p class="card--wallet__amount-label">Current balance</p>
+            </div>
+            <div class="card--wallet__amount-block">
+              <p class="card--wallet__amount">$5,860.00</p>
+              <p class="card--wallet__amount-label">Available credit</p>
+            </div>
+          </div>
+          <div class="card--wallet__progress"><div class="card--wallet__progress-fill" style="width: 26.75%"></div></div>
+          <div class="card--wallet__rewards">
+            <p class="card--wallet__rewards-title">Rewards</p>
+            <div class="card--wallet__rewards-row"><span>18,420 points</span><span>2X on dining &amp; travel</span></div>
+            <p class="card--wallet__rewards-cashback">Cashback earned: <strong>$214.50</strong></p>
+          </div>
+          <div class="card--wallet__actions">
+            <button type="button" class="btn-outline">Freeze card</button>
+            <button type="button" class="btn-outline">Details</button>
+            <button type="button" class="btn-primary">Make a payment</button>
+          </div>
+        </div>
+
+        <div class="card card--wallet">
+          <div class="card--wallet__art card--wallet__art--debit">
+            <span class="card--wallet__art-top">
+              <span class="card--wallet__art-label">First Tech</span>
+              <span class="card--wallet__art-chip" aria-hidden="true"></span>
+            </span>
+            <span class="card--wallet__art-number">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4821</span>
+            <span class="card--wallet__art-network">mastercard</span>
+          </div>
+          <div>
+            <p class="card--wallet__name">Rewards Checking Debit Mastercard</p>
+            <p class="card--wallet__meta">x4821 &nbsp;&middot;&nbsp; Expires 03/28</p>
+          </div>
+          <div class="card--wallet__daily">
+            <div class="card--wallet__daily-row"><span>Daily spending</span><span>$412 / $1,500</span></div>
+            <div class="card--wallet__progress"><div class="card--wallet__progress-fill" style="width: 27.5%"></div></div>
+          </div>
+          <div class="card--wallet__actions">
+            <button type="button" class="btn-outline">Freeze card</button>
+            <button type="button" class="btn-outline">Details</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: PROFILE ============ -->
+    <section class="app-section app-section--subpage" data-section="profile">
+      <div class="profile-header">
+        <div class="subpage-header__island" aria-hidden="true"></div>
+        <div class="profile-header__row">
+          <button type="button" class="subpage-header__back" data-section="home" aria-label="Back to home">
+            <img src="assets/chevron-left.svg" alt="" />
+          </button>
+          <button type="button" class="subpage-header__settings" aria-label="Settings">
+            <img src="assets/icon-settings.svg" alt="" />
+          </button>
+        </div>
+        <div class="profile-header__identity">
+          <img src="assets/profile-photo.png" alt="Morgan Ellis" class="profile-header__photo" />
+          <div>
+            <p class="profile-header__name">Morgan Ellis</p>
+            <p class="profile-header__meta">Premier Member &middot; Microsoft<br />Member since April 2019</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-scroll">
+        <div class="card credit-score-card">
+          <div class="credit-score-card__top">
+            <div>
+              <p class="credit-score-card__label">Credit Score</p>
+              <p class="credit-score-card__value">803</p>
+            </div>
+            <div class="credit-score-card__right">
+              <span class="tag tag--green">Excellent</span>
+              <p class="credit-score-card__updated">Updated Sep 2</p>
+            </div>
+          </div>
+          <div class="credit-score-card__scale">
+            <img src="assets/credit-score-scale.svg" alt="Credit score scale from 300 to 850" />
+            <div class="credit-score-card__scale-labels"><span>300</span><span>850</span></div>
+          </div>
+        </div>
+
+        <div class="card profile-menu">
+          <a href="#" class="profile-menu__item">
+            <span class="profile-menu__icon"><img src="assets/icon-account-settings.svg" alt="" /></span>
+            <span class="profile-menu__label">Account Settings</span>
+            <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+          </a>
+          <a href="#" class="profile-menu__item">
+            <span class="profile-menu__icon"><img src="assets/icon-security.svg" alt="" /></span>
+            <span class="profile-menu__label">Security &amp; Privacy</span>
+            <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+          </a>
+          <a href="#" class="profile-menu__item">
+            <span class="profile-menu__icon"><img src="assets/icon-notifications.svg" alt="" /></span>
+            <span class="profile-menu__label">Notifications</span>
+            <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+          </a>
+          <a href="#" class="profile-menu__item">
+            <span class="profile-menu__icon"><img src="assets/icon-statements.svg" alt="" /></span>
+            <span class="profile-menu__label">Statements &amp; Documents</span>
+            <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+          </a>
+          <a href="#" class="profile-menu__item">
+            <span class="profile-menu__icon"><img src="assets/icon-help.svg" alt="" /></span>
+            <span class="profile-menu__label">Help &amp; Support</span>
+            <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+          </a>
+          <a href="#" class="profile-menu__item profile-menu__item--last">
+            <span class="profile-menu__icon"><img src="assets/icon-signout.svg" alt="" /></span>
+            <span class="profile-menu__label">Sign Out</span>
+            <img src="assets/chevron-right.svg" alt="" class="account-row__chevron" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: COACH ============ -->
+    <section class="app-section app-section--coach" data-section="coach">
+      <div class="app-topbar app-topbar--minimal">
+        <div class="app-topbar__island" aria-hidden="true"></div>
+      </div>
+      <div class="coach-panel">
+        <div class="coach-panel__badge"><img src="assets/moneycoach-badge.png" alt="Money Coach" /></div>
+        <div class="coach-panel__body" id="coachBody">
+          <div class="coach-panel__greeting" id="coachGreeting">
+            <h3>Good morning!</h3>
+            <p>What can I help you with today? Ask about your spending, goals, or accounts.</p>
+          </div>
+          <div class="coach-panel__messages" id="coachMessages"></div>
+          <div class="coach-panel__prompts" id="coachPrompts">
+            <button type="button" class="coach-prompt">Why is my dining spend up this month?</button>
+            <button type="button" class="coach-prompt">How's my Home Down Payment goal doing?</button>
+            <button type="button" class="coach-prompt">How am I doing on my August budget?</button>
+          </div>
+        </div>
+        <p class="coach-panel__disclaimer">General guidance only — not personalized financial or fiduciary advice.</p>
+        <form class="coach-panel__input" id="coachForm">
+          <input type="text" id="coachInput" placeholder="What can I help you with?" autocomplete="off" />
+          <button type="submit" class="coach-panel__send" aria-label="Send message">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="0" y="6" width="2" height="6" rx="1" fill="#797979" />
+              <rect x="4" y="3" width="2" height="12" rx="1" fill="#797979" />
+              <rect x="8" y="0" width="2" height="18" rx="1" fill="#797979" />
+              <rect x="12" y="4" width="2" height="10" rx="1" fill="#797979" />
+              <rect x="16" y="7" width="2" height="4" rx="1" fill="#797979" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <nav class="app-bottom-nav">
+    <button type="button" class="bottom-nav__btn is-active" data-section="home">
+      <span class="bottom-nav__icon" style="--icon-src: url('../assets/nav-home.svg')"></span>
+      <span>Home</span>
+    </button>
+    <button type="button" class="bottom-nav__btn" data-section="accounts">
+      <span class="bottom-nav__icon" style="--icon-src: url('../assets/nav-accounts.svg')"></span>
+      <span>Accounts</span>
+    </button>
+    <button type="button" class="bottom-nav__btn" data-section="coach">
+      <img src="assets/nav-coach.svg" alt="" class="bottom-nav__icon-gradient" />
+      <span>Coach</span>
+    </button>
+    <button type="button" class="bottom-nav__btn" data-section="cards">
+      <span class="bottom-nav__icon" style="--icon-src: url('../assets/nav-cards.svg')"></span>
+      <span>Cards</span>
+    </button>
+    <button type="button" class="bottom-nav__btn" data-section="profile">
+      <span class="bottom-nav__icon" style="--icon-src: url('../assets/nav-profile.svg')"></span>
+      <span>Profile</span>
+    </button>
+  </nav>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

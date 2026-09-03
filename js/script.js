@@ -6,6 +6,68 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
+// Hero persona preview toggle
+const HERO_PERSONAS = {
+  anonymous: {
+    bg: '_images/images/GettyImages-2133181950.jpg',
+    headline: "Banking<br>that's actually yours.",
+  },
+  auto: {
+    bg: '_images/figma-export/persona-auto-loan.jpg',
+    flip: true,
+    headline: 'Your auto loan<br>quote is ready.',
+    copy: "Rates as low as 8.32% APR — plus 0.50% off with a First Tech relationship.",
+    cta: 'See your estimated payment',
+  },
+  dcu: {
+    bg: '_images/figma-export/persona-dcu-member.jpg',
+    headline: 'Your membership just got a lot bigger.',
+    copy: "Same account you've always had, with a lot more behind it.",
+    cta: "See what's included",
+  },
+  new: {
+    bg: '_images/figma-export/persona-new-member.jpg',
+    headline: 'Your rate is waiting.',
+    copy: 'Add Rewards Checking before day 90 and your savings earns 3.00% APY, plus $10/month back in ATM fees.',
+    cta: 'Open Rewards Checking',
+  },
+};
+
+const heroBgImg = document.getElementById('heroBgImg');
+const heroHeadline = document.getElementById('heroHeadline');
+const heroAnonExtras = document.getElementById('heroAnonExtras');
+const heroPersonaCopy = document.getElementById('heroPersonaCopy');
+const heroPersonaText = document.getElementById('heroPersonaText');
+const heroPersonaCta = document.getElementById('heroPersonaCta');
+const heroPersonaToggle = document.getElementById('heroPersonaToggle');
+
+function setHeroPersona(key) {
+  const persona = HERO_PERSONAS[key];
+  if (!persona) return;
+
+  heroBgImg.src = persona.bg;
+  heroBgImg.classList.toggle('is-flipped', Boolean(persona.flip));
+  heroHeadline.innerHTML = persona.headline;
+
+  const isAnonymous = key === 'anonymous';
+  heroAnonExtras.style.display = isAnonymous ? '' : 'none';
+  heroPersonaCopy.style.display = isAnonymous ? 'none' : 'flex';
+  if (!isAnonymous) {
+    heroPersonaText.textContent = persona.copy;
+    heroPersonaCta.textContent = persona.cta;
+  }
+
+  heroPersonaToggle.querySelectorAll('button').forEach((btn) => {
+    const isActive = btn.dataset.persona === key;
+    btn.classList.toggle('is-active', isActive);
+    btn.setAttribute('aria-selected', String(isActive));
+  });
+}
+
+heroPersonaToggle.querySelectorAll('button').forEach((btn) => {
+  btn.addEventListener('click', () => setHeroPersona(btn.dataset.persona));
+});
+
 // Explore carousel arrows
 const roleCards = document.getElementById('roleCards');
 document.querySelectorAll('.carousel-arrow').forEach((btn) => {
@@ -17,14 +79,11 @@ document.querySelectorAll('.carousel-arrow').forEach((btn) => {
 });
 
 // Loan calculator
-const memberType = document.getElementById('memberType');
 const loanType = document.getElementById('loanType');
 const loanAmount = document.getElementById('loanAmount');
 const loanTerm = document.getElementById('loanTerm');
 const rateBox = document.getElementById('rateBox');
 const paymentEstimate = document.getElementById('paymentEstimate');
-
-const RELATIONSHIP_DISCOUNT = 0.50; // existing member discount, percentage points
 
 function parseAmount(value) {
   const digits = value.replace(/[^0-9]/g, '');
@@ -36,9 +95,7 @@ function formatAmount(n) {
 }
 
 function currentRate() {
-  const baseRate = parseFloat(loanType.selectedOptions[0].dataset.rate);
-  const discount = memberType.value === 'existing' ? RELATIONSHIP_DISCOUNT : 0;
-  return Math.max(baseRate - discount, 0);
+  return parseFloat(loanType.selectedOptions[0].dataset.rate);
 }
 
 function monthlyPayment(principal, annualRatePct, months) {
@@ -93,14 +150,14 @@ loanAmount.addEventListener('input', () => {
   recalculate();
 });
 
-[memberType, loanType, loanTerm].forEach((el) => el.addEventListener('change', () => {
+[loanType, loanTerm].forEach((el) => el.addEventListener('change', () => {
   sizeSelect(el);
   recalculate();
 }));
 
 recalculate();
 sizeAmountInput();
-[memberType, loanType, loanTerm].forEach(sizeSelect);
+[loanType, loanTerm].forEach(sizeSelect);
 
 // Money Coach floating chat
 const moneycoachFab = document.getElementById('moneycoachFab');
@@ -505,4 +562,19 @@ if (calloutFeature) {
     calloutIndex = (calloutIndex + 1) % CALLOUT_FEATURES.length;
     showCalloutFeature(calloutIndex);
   }, 5000);
+}
+
+// Why-us stats — fade in one at a time when the section scrolls into view
+const statsRow = document.querySelector('.stats-row');
+if (statsRow) {
+  const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        statsRow.classList.add('is-visible');
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  statsObserver.observe(statsRow);
 }

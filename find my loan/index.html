@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find My Loan — First Tech</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ SCREEN: HOME ============ -->
+  <section id="screen-home" class="screen active">
+    <div class="header-slot"></div>
+
+    <div class="hero hero--home">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Personalized for you</p>
+          <h1 class="hero-title">Let&rsquo;s find what&rsquo;s<br />right for you</h1>
+          <p class="hero-desc">Every financial situation is different. Tell us a little about yours and we&rsquo;ll show you which First Tech products will help — and exactly how much you could save.</p>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/Find my loan Hero.png" alt="Member checking phone next to car" />
+      </div>
+    </div>
+
+    <div class="prompts">
+      <h2 class="prompts-title">What brings you here?</h2>
+      <div class="prompts-grid">
+        <div class="prompt-card" data-disabled="true">
+          <img src="assets/home.svg" alt="" class="icon-80" />
+          <div class="prompt-content">
+            <p class="prompt-title">Buying my first home</p>
+            <p class="prompt-sub">Save for a down payment &amp; get mortgage-ready</p>
+          </div>
+        </div>
+        <button type="button" class="prompt-card prompt-card--auto" id="auto-card" aria-pressed="false">
+          <img src="assets/directions_car.svg" alt="" class="icon-80 icon-default" />
+          <img src="assets/directions_car_selected.svg" alt="" class="icon-80 icon-selected" />
+          <div class="prompt-content">
+            <p class="prompt-title">Getting a better deal on my car</p>
+            <p class="prompt-sub">Rates got expensive — see what a member discount saves</p>
+          </div>
+        </button>
+        <div class="prompt-card" data-disabled="true">
+          <img src="assets/account_balance.svg" alt="" class="icon-80" />
+          <div class="prompt-content">
+            <p class="prompt-title">Leaving my old bank</p>
+            <p class="prompt-sub">Done paying fees and earning next to nothing</p>
+          </div>
+        </div>
+        <div class="prompt-card" data-disabled="true">
+          <img src="assets/add_card.svg" alt="" class="icon-80" />
+          <div class="prompt-content">
+            <p class="prompt-title">Starting to build credit</p>
+            <p class="prompt-sub">No credit history yet — I want to start right</p>
+          </div>
+        </div>
+        <div class="prompt-card" data-disabled="true">
+          <img src="assets/savings.svg" alt="" class="icon-80" />
+          <div class="prompt-content">
+            <p class="prompt-title">Growing my savings</p>
+            <p class="prompt-sub">My money is just sitting there doing nothing</p>
+          </div>
+        </div>
+        <div class="prompt-card" data-disabled="true">
+          <img src="assets/money_off.svg" alt="" class="icon-80" />
+          <div class="prompt-content">
+            <p class="prompt-title">Getting out of debt</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="describe-form">
+        <h3 class="describe-title">or describe it in your own words</h3>
+        <textarea class="describe-field" placeholder="Tell us about your financial situation – where you bank now, what&rsquo;s not working, and what you&rsquo;re trying to accomplish"></textarea>
+      </div>
+
+      <div class="home-cta">
+        <button type="button" class="btn btn--primary btn--continue" id="home-continue" disabled>
+          Continue
+          <img src="assets/Arrow.svg" alt="" class="btn-arrow" />
+        </button>
+        <p class="home-cta-note">Two quick questions, then your results · No account needed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: QUESTION 1 ============ -->
+  <section id="screen-q1" class="screen quiz-screen">
+    <div class="header-slot"></div>
+    <div class="quiz-bg">
+      <div class="quiz-card">
+        <button type="button" class="back-link" data-back="home">
+          <img src="assets/arrow-back.svg" alt="" />
+          Back
+        </button>
+        <div class="quiz-tracker">
+          <p class="tracker-label">Step 1 of 3</p>
+          <div class="tracker-bars">
+            <div class="tracker-bar tracker-bar--current"></div>
+            <div class="tracker-bar tracker-bar--upcoming"></div>
+            <div class="tracker-bar tracker-bar--upcoming"></div>
+          </div>
+        </div>
+        <div class="quiz-header">
+          <p class="quiz-eyebrow">Just a couple quick questions</p>
+          <p class="quiz-question">Are you already a First Tech member?</p>
+        </div>
+        <div class="quiz-options" data-next="q2">
+          <button type="button" class="quiz-option">
+            <span>Not yet — I&rsquo;d be new</span>
+            <span class="option-arrow"><img src="assets/arrow-icon-outline.svg" alt="" class="arrow-default" /><img src="assets/arrow-icon-filled.svg" alt="" class="arrow-hover" /></span>
+          </button>
+          <button type="button" class="quiz-option">
+            <span>Yes, but this would be a new account type for me</span>
+            <span class="option-arrow"><img src="assets/arrow-icon-outline.svg" alt="" class="arrow-default" /><img src="assets/arrow-icon-filled.svg" alt="" class="arrow-hover" /></span>
+          </button>
+          <button type="button" class="quiz-option">
+            <span>Yes, I already have something like this</span>
+            <span class="option-arrow"><img src="assets/arrow-icon-outline.svg" alt="" class="arrow-default" /><img src="assets/arrow-icon-filled.svg" alt="" class="arrow-hover" /></span>
+          </button>
+        </div>
+        <p class="quiz-footnote">Takes about 10 more seconds</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: QUESTION 2 ============ -->
+  <section id="screen-q2" class="screen quiz-screen">
+    <div class="header-slot"></div>
+    <div class="quiz-bg">
+      <div class="quiz-card">
+        <button type="button" class="back-link" data-back="q1">
+          <img src="assets/arrow-back.svg" alt="" />
+          Back
+        </button>
+        <div class="quiz-tracker">
+          <p class="tracker-label">Step 2 of 3</p>
+          <div class="tracker-bars">
+            <div class="tracker-bar tracker-bar--done"></div>
+            <div class="tracker-bar tracker-bar--current"></div>
+            <div class="tracker-bar tracker-bar--upcoming"></div>
+          </div>
+        </div>
+        <div class="quiz-header">
+          <p class="quiz-eyebrow">Just a couple quick questions</p>
+          <p class="quiz-question">Do you already have a car loan?</p>
+        </div>
+        <div class="quiz-options" data-next="q3">
+          <button type="button" class="quiz-option">
+            <span>Yes, financed through a dealer or bank</span>
+            <span class="option-arrow"><img src="assets/arrow-icon-outline.svg" alt="" class="arrow-default" /><img src="assets/arrow-icon-filled.svg" alt="" class="arrow-hover" /></span>
+          </button>
+          <button type="button" class="quiz-option">
+            <span>Yes, already with First Tech</span>
+            <span class="option-arrow"><img src="assets/arrow-icon-outline.svg" alt="" class="arrow-default" /><img src="assets/arrow-icon-filled.svg" alt="" class="arrow-hover" /></span>
+          </button>
+          <button type="button" class="quiz-option">
+            <span>No — I&rsquo;m buying</span>
+            <span class="option-arrow"><img src="assets/arrow-icon-outline.svg" alt="" class="arrow-default" /><img src="assets/arrow-icon-filled.svg" alt="" class="arrow-hover" /></span>
+          </button>
+        </div>
+        <p class="quiz-footnote">Takes about 10 more seconds</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: QUESTION 3 (CONTACT) ============ -->
+  <section id="screen-q3" class="screen quiz-screen">
+    <div class="header-slot"></div>
+    <div class="quiz-bg">
+      <div class="quiz-card">
+        <button type="button" class="back-link" data-back="q2">
+          <img src="assets/arrow-back.svg" alt="" />
+          Back
+        </button>
+        <div class="quiz-tracker">
+          <p class="tracker-label">Step 3 of 3</p>
+          <div class="tracker-bars">
+            <div class="tracker-bar tracker-bar--done"></div>
+            <div class="tracker-bar tracker-bar--done"></div>
+            <div class="tracker-bar tracker-bar--current"></div>
+          </div>
+        </div>
+        <div class="quiz-header">
+          <p class="quiz-eyebrow">Last step</p>
+          <p class="quiz-question">Where should we send your results</p>
+          <p class="quiz-subtext">So an advisor can follow up if you want help — we won&rsquo;t call unless you ask us to.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field-group">
+            <label class="field-label" for="contact-name">Name *</label>
+            <input class="field-input" type="text" id="contact-name" placeholder="Full Name" autocomplete="off" />
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="contact-email">Email Address *</label>
+            <input class="field-input" type="email" id="contact-email" placeholder="name@email.com" autocomplete="off" />
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="contact-phone">Phone number *</label>
+            <input class="field-input" type="tel" id="contact-phone" placeholder="(123) 456-7890" autocomplete="off" />
+          </div>
+          <div class="contact-cta">
+            <button type="submit" class="btn btn--primary" id="results-submit" disabled>
+              See my results
+              <img src="assets/Arrow.svg" alt="" class="btn-arrow" />
+            </button>
+            <p class="contact-disclaimer">Membership eligibility required. We&rsquo;ll never sell your information.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: LOADING ============ -->
+  <section id="screen-loading" class="screen">
+    <div class="header-slot"></div>
+    <div class="loading-wrap">
+      <div class="loading-logo" id="loading-logo">
+        <img src="animation/1.svg" alt="" id="loading-frame" />
+      </div>
+      <div class="loading-copy">
+        <p class="loading-title">Putting your personal plan together&hellip;</p>
+        <p class="loading-sub">We&rsquo;ll only recommend products that genuinely make sense for you</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: RESULTS ============ -->
+  <section id="screen-results" class="screen">
+    <div class="header-slot"></div>
+
+    <div class="results-hero">
+      <img src="assets/Results Hero.png" alt="" class="results-hero-img" />
+      <div class="results-hero-overlay"></div>
+      <div class="results-hero-content">
+        <p class="results-hero-eyebrow">Your Member Profile</p>
+        <p class="results-hero-headline">&ldquo;Financed through the dealer and paying more interest than a relationship discount would allow.&rdquo;</p>
+        <p class="results-hero-sub">Apply to refinance your auto loan and confirm<br />your 0.50% relationship discount.</p>
+      </div>
+      <div class="results-hero-card">
+        <span class="results-hero-tag">Auto Rate Shopper</span>
+        <div class="results-hero-number">
+          <p class="results-hero-amount">$1,470</p>
+          <p class="results-hero-amount-label">Est. Annual Benefit</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-products">
+      <div class="results-products-header">
+        <h2 class="results-title">Recommended for you</h2>
+        <p class="results-subtitle">Select the accounts you&rsquo;d like to open, or talk to a real person.</p>
+      </div>
+      <div class="account-count-pill" id="account-count-pill" hidden></div>
+
+      <div class="account-cards" id="account-cards">
+        <article class="account-card" data-account="auto">
+          <div class="account-flag">Auto Loan</div>
+          <div class="account-card-top">
+            <span class="match match--green"><img src="assets/check-circle-green.svg" alt="" />97% match</span>
+            <button type="button" class="account-checkbox" aria-pressed="false" aria-label="Select Auto Loan Refinance"></button>
+          </div>
+          <div class="account-name">
+            <p class="account-product">Auto Loan Refinance</p>
+            <p class="account-amount">$1,150</p>
+            <p class="account-amount-label">est. interest saved vs. dealer financing</p>
+          </div>
+          <p class="account-desc">Refinance as low as 6.25% APR, plus a 0.50% relationship discount.</p>
+          <div class="lines-divider"></div>
+          <div class="account-list">
+            <p class="account-list-title">Includes:</p>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />Refinance rates as low as 6.25% APR</div>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />0.50% discount for qualifying members</div>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />Terms up to 84 months</div>
+          </div>
+          <div class="account-why">
+            <p class="account-why-title">Why this fits you:</p>
+            <p class="account-why-text">Dealer financing rarely includes a relationship discount, so the same credit profile often qualifies for less here. Refinancing can capture this savings even on a loan you already have.</p>
+          </div>
+        </article>
+
+        <article class="account-card" data-account="checking">
+          <div class="account-flag">Everyday Banking</div>
+          <div class="account-card-top">
+            <span class="match match--green"><img src="assets/check-circle-green.svg" alt="" />91% match</span>
+            <button type="button" class="account-checkbox" aria-pressed="false" aria-label="Select Rewards Checking"></button>
+          </div>
+          <div class="account-name">
+            <p class="account-product">Rewards Checking</p>
+            <p class="account-amount">$120</p>
+            <p class="account-amount-label">est. annual ATM fees reimbursed</p>
+          </div>
+          <p class="account-desc">Free autopay on your loan, plus<br />$10/month in ATM fees reimbursed.</p>
+          <div class="lines-divider"></div>
+          <div class="account-list">
+            <p class="account-list-title">Includes:</p>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />Free autopay from checking</div>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />$10/month ATM fee reimbursement</div>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />Real-time payment alerts</div>
+          </div>
+          <div class="account-why">
+            <p class="account-why-title">Why this fits you:</p>
+            <p class="account-why-text">Autopay from checking means your loan payment never slips. Real-time alerts also flag a missed paycheck deposit before it becomes a problem.</p>
+          </div>
+        </article>
+
+        <article class="account-card" data-account="savings">
+          <div class="account-flag">Savings</div>
+          <div class="account-card-top">
+            <span class="match match--teal"><img src="assets/check-circle-teal.svg" alt="" />87% match</span>
+            <button type="button" class="account-checkbox" aria-pressed="false" aria-label="Select Rewards Savings"></button>
+          </div>
+          <div class="account-name">
+            <p class="account-product">Rewards Savings</p>
+            <p class="account-amount">$200</p>
+            <p class="account-amount-label">est. annual interest on a $2,000 cushion</p>
+          </div>
+          <p class="account-desc">Build a maintenance and repair cushion alongside your loan.</p>
+          <div class="lines-divider"></div>
+          <div class="account-list">
+            <p class="account-list-title">Includes:</p>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />Up to 3.00% APY with qualifying checking activity</div>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />No minimum balance</div>
+            <div class="account-list-item"><img src="assets/check.svg" alt="" />Automatic transfers from checking</div>
+          </div>
+          <div class="account-why">
+            <p class="account-why-title">Why this fits you:</p>
+            <p class="account-why-text">A small dedicated fund covers a surprise repair without touching your loan payment. It also earns more than the same cash sitting in checking.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="results-calc">
+        <h3>How we calculated your benefit</h3>
+        <p>Combines a 0.50% relationship-based auto rate discount with ATM fee reimbursement and a small repair cushion.</p>
+      </div>
+
+      <div class="lines-divider lines-divider--wide"></div>
+
+      <div class="advisor-tip">
+        <img src="assets/Advisor Image.png" alt="" class="advisor-img" />
+        <div class="advisor-copy">
+          <p class="advisor-label">Advisor Tip</p>
+          <p class="advisor-text">Ask about refinancing even though you already bought the car — the 0.50% relationship discount can often apply to an existing loan, not just a new purchase.</p>
+        </div>
+      </div>
+      <p class="results-disclaimer">Illustrative estimates for design purposes only — see firsttechfed.com for current rates and terms. Membership eligibility required. Federally insured by NCUA. © 2026 First Tech Federal Credit Union.</p>
+    </div>
+
+    <div class="sticky-footer" id="sticky-footer">
+      <div class="footer-accounts">
+        <div class="footer-accounts-line">
+          <p class="footer-accounts-main" id="footer-main-text">Select the accounts you&rsquo;d like to open, or talk to a real person.</p>
+          <p class="footer-accounts-benefit" id="footer-benefit-text" hidden></p>
+        </div>
+        <p class="footer-accounts-sub" id="footer-sub-text"></p>
+      </div>
+      <div class="footer-ctas">
+        <button type="button" class="start-over" id="start-over">
+          <img src="assets/replay.svg" alt="" />
+          Start over
+        </button>
+        <button type="button" class="btn btn--outline">Talk to an advisor</button>
+        <button type="button" class="btn btn--accent" id="footer-cta" hidden>
+          <span id="footer-cta-text">Apply</span>
+          <img src="assets/Arrow.svg" alt="" class="btn-arrow btn-arrow--dark" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

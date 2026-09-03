@@ -56,24 +56,38 @@
 <!-- Hero -->
 <header class="hero">
   <div class="hero__bg">
-    <img src="_images/images/GettyImages-2133181950.jpg" alt="" class="hero__bg-img">
+    <img src="_images/images/GettyImages-2133181950.jpg" alt="" class="hero__bg-img" id="heroBgImg">
     <div class="hero__gradient"></div>
   </div>
 
+  <div class="hero__persona-toggle" id="heroPersonaToggle" role="tablist" aria-label="Preview persona">
+    <button type="button" class="is-active" data-persona="anonymous" role="tab" aria-selected="true">Anonymous</button>
+    <button type="button" data-persona="auto" role="tab" aria-selected="false">Auto loan</button>
+    <button type="button" data-persona="dcu" role="tab" aria-selected="false">Former DCU member</button>
+    <button type="button" data-persona="new" role="tab" aria-selected="false">New member</button>
+  </div>
+
   <div class="hero__content">
-    <h1 class="hero__headline">Banking<br>that's actually yours.</h1>
+    <h1 class="hero__headline" id="heroHeadline">Banking<br>that's actually yours.</h1>
   </div>
 
-  <div class="hero__blurb hero__blurb--1">
-    <img src="_images/icons/goals.png" alt="" class="hero__blurb-icon">
-    <p>You're 68% towards your home down payment goals.</p>
-  </div>
-  <div class="hero__blurb hero__blurb--2">
-    <img src="_images/icons/budget.svg" alt="" class="hero__blurb-icon">
-    <p>You're on track for your August budget check-in.</p>
+  <div class="hero__anon-extras" id="heroAnonExtras">
+    <div class="hero__blurb hero__blurb--1">
+      <img src="_images/icons/goals.png" alt="" class="hero__blurb-icon">
+      <p>You're 68% towards your home down payment goals.</p>
+    </div>
+    <div class="hero__blurb hero__blurb--2">
+      <img src="_images/icons/budget.svg" alt="" class="hero__blurb-icon">
+      <p>You're on track for your August budget check-in.</p>
+    </div>
+
+    <a href="#" class="btn btn--dark hero__cta">See today's rates</a>
   </div>
 
-  <a href="#" class="btn btn--dark hero__cta">See today's rates</a>
+  <div class="hero__persona-copy" id="heroPersonaCopy">
+    <p id="heroPersonaText"></p>
+    <a href="#" class="btn btn--accent" id="heroPersonaCta">See your estimated payment</a>
+  </div>
 
   <div class="hero__stats">
     <div class="stat-card">
@@ -221,12 +235,7 @@
   <section class="section loan-calc">
     <h2 class="loan-calc__title">What could your next loan cost?</h2>
     <h3 class="loan-calc__sentence">
-      I'm a
-      <select id="memberType" class="pill-select">
-        <option value="new">new</option>
-        <option value="existing">existing</option>
-      </select>
-      member and need a
+      I need a
       <select id="loanType" class="pill-select">
         <option value="new-auto" data-rate="6.25">new auto</option>
         <option value="used-auto" data-rate="6.75">used auto</option>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Banking — iPhone 17 Preview</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 20%, #3a3f44 0%, #16181a 70%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .stage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .device {
+    position: relative;
+    width: 464px;
+    height: 980px;
+    flex: none;
+    padding: 14px;
+    box-sizing: border-box;
+    background: linear-gradient(155deg, #4b4d50 0%, #2a2b2d 35%, #17181a 100%);
+    border-radius: 68px;
+    box-shadow:
+      0 40px 80px rgba(0, 0, 0, 0.55),
+      inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+    transform: scale(var(--s, 1));
+  }
+
+  .device__screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 56px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: inset 0 0 0 3px #000;
+  }
+
+  .device__screen iframe {
+    width: 440px;
+    height: 956px;
+    border: 0;
+    display: block;
+  }
+
+  /* Side hardware buttons */
+  .btn { position: absolute; background: linear-gradient(90deg, #3a3b3d, #1d1e20); border-radius: 3px; }
+  .btn--action      { left: -3px; top: 150px; width: 4px; height: 28px; }
+  .btn--volume-up   { left: -3px; top: 210px; width: 4px; height: 55px; }
+  .btn--volume-down { left: -3px; top: 278px; width: 4px; height: 55px; }
+  .btn--power       { right: -3px; top: 230px; width: 4px; height: 90px; }
+
+  .caption {
+    position: fixed;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="device" id="device">
+    <div class="btn btn--action"></div>
+    <div class="btn btn--volume-up"></div>
+    <div class="btn btn--volume-down"></div>
+    <div class="btn btn--power"></div>
+    <div class="device__screen">
+      <iframe src="ai-banking/index.html" title="AI Banking prototype"></iframe>
+    </div>
+  </div>
+</div>
+
+<p class="caption">iPhone 17 Pro Max &nbsp;·&nbsp; CSS device mockup &nbsp;·&nbsp; not the real iOS Simulator</p>
+
+<script>
+  function fitDevice() {
+    var margin = 70;
+    var scale = Math.min(
+      (window.innerWidth - margin) / 464,
+      (window.innerHeight - margin) / 980,
+      1
+    );
+    document.documentElement.style.setProperty('--s', scale);
+  }
+  window.addEventListener('resize', fitDevice);
+  fitDevice();
+</script>
+
+</body>
+</html>
